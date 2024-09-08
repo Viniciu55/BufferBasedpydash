@@ -47,6 +47,9 @@ class R2ABufferBased(IR2A):
         #Valores para a função e^((x-5)/7)
         #bufferlist = [0, 5, 9, 12, 14, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
 
+        #Valores para a função x*0.2 se x<10 se não x*0.9-7
+        #bufferlist = [0, 5, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27]
+
 
         #verifica se existem informações de buffer, caso contrário, o buffer é =5
         if len(b)>0:

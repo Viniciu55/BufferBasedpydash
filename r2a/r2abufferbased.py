@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from statistics import mean
 from player.parser import *
 from r2a.ir2a import IR2A
 
@@ -29,7 +30,23 @@ class R2ABufferBased(IR2A):
         print("==========================================")
         b = self.whiteboard.get_playback_buffer_size()
         Qselec = 0
-        bufferlist = range(0,100,5) #lista de qualidades possíveis
+
+        #Selecionar a lista de buffers (ative apenas um) 
+        #Valores para a função y=x*0,2
+        bufferlist = range(0,100,5) #lista das possíveis qualidades em um gráfico linear
+
+        #Valores para a função e^((x-20)/30)
+        #bufferlist = [0, 20, 40, 52, 61, 68, 73, 78, 82, 85, 89, 91, 94, 96, 101, 103, 104, 106, 108, 120]
+        
+        #Valores para a função e^((x-18)/20)
+        #bufferlist = [0, 18, 31, 39, 45, 50, 53, 56, 59, 61, 64, 65, 67, 69, 70, 72, 73, 74, 75, 76]
+
+        #Valores para a função e^((x-5)/15)
+        #bufferlist = [0, 15, 21, 25, 29, 31, 34, 36, 37, 39, 40, 42, 43, 44, 45, 46, 47, 48, 49, 50]
+
+        #Valores para a função e^((x-5)/7)
+        #bufferlist = [0, 5, 9, 12, 14, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+
 
         #verifica se existem informações de buffer, caso contrário, o buffer é =5
         if len(b)>0:
